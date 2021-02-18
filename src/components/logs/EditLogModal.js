@@ -29,10 +29,14 @@ const EditLogModal = () => {
             <input
               type="text"
               name="message"
+              style={{
+                borderBottom: "1px solid #607d8b",
+                boxShadow: "0 1px 0 0 #607d8b",
+              }}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <label htmlFor="message" className="active">
+            <label htmlFor="message" style={{ color: "#607d8b" }} className="active">
               Log Message
             </label>
           </div>
@@ -73,7 +77,7 @@ const EditLogModal = () => {
         </div>
       </div>
       <div className="modal-footer">
-        <a href="#!" onClick={onSubmit} className="modal-close teal waves-effect waves-light btn">
+        <a href="#!" onClick={onSubmit} className="modal-close blue-grey waves-effect waves-light btn">
           Enter
         </a>
       </div>

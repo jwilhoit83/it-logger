@@ -1,0 +1,8 @@
+.label-focus:focus {
+  color: #607d8b;
+}
+/* label underline focus color */
+.input-focus:focus {
+  border-bottom: 1px solid #607d8b;
+  box-shadow: 0 1px 0 0 #607d8b;
+}

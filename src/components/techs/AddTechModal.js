@@ -26,11 +26,15 @@ const AddTechModal = () => {
           <div className="input-field">
             <input
               type="text"
+              style={{
+                borderBottom: "1px solid #607d8b",
+                boxShadow: "0 1px 0 0 #607d8b",
+              }}
               name="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
-            <label htmlFor="firstName" className='active'>
+            <label htmlFor="firstName" style={{ color: "#607d8b" }} className='active'>
               First Name
             </label>
           </div>
@@ -40,11 +44,15 @@ const AddTechModal = () => {
           <div className="input-field">
             <input
               type="text"
+              style={{
+                borderBottom: "1px solid #607d8b",
+                boxShadow: "0 1px 0 0 #607d8b",
+              }}
               name="lastName"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
-            <label htmlFor="lastName" className='active'>
+            <label htmlFor="lastName" style={{ color: "#607d8b" }} className='active'>
               Last Name
             </label>
           </div>

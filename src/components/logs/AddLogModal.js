@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { connect } from "react-redux";
+import { addLog } from "../../actions/logActions";
 import M from "materialize-css/dist/js/materialize.min.js";
 
-const AddLogModal = () => {
+const AddLogModal = ({ addLog }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState("");
@@ -10,7 +12,16 @@ const AddLogModal = () => {
     if (message === "" || tech === "") {
       M.toast({ html: "Please enter a message and tech" });
     } else {
-      console.log(message, tech, attention);
+      const newLog = {
+        message,
+        attention,
+        tech,
+        data: new Date(),
+      };
+
+      addLog(newLog);
+
+      M.toast({ html: `Log added by ${tech}` });
 
       //clear fields
       setMessage("");
@@ -29,10 +40,14 @@ const AddLogModal = () => {
             <input
               type="text"
               name="message"
+              style={{
+                borderBottom: "1px solid #607d8b",
+                boxShadow: "0 1px 0 0 #607d8b",
+              }}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <label htmlFor="message" className="active">
+            <label htmlFor="message" style={{ color: "#607d8b" }} className="active">
               Log Message
             </label>
           </div>
@@ -43,7 +58,7 @@ const AddLogModal = () => {
             <select
               name="tech"
               value={tech}
-              className='browser-default'
+              className="browser-default"
               onChange={(e) => setTech(e.target.value)}>
               <option value="" disabled>
                 Select Technician
@@ -73,7 +88,10 @@ const AddLogModal = () => {
         </div>
       </div>
       <div className="modal-footer">
-        <a href="#!" onClick={onSubmit} className="modal-close blue-grey waves-effect waves-light btn">
+        <a
+          href="#!"
+          onClick={onSubmit}
+          className="modal-close blue-grey waves-effect waves-light btn">
           Enter
         </a>
       </div>
@@ -81,4 +99,4 @@ const AddLogModal = () => {
   );
 };
 
-export default AddLogModal;
+export default connect(null, { addLog })(AddLogModal);
