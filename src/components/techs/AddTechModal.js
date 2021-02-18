@@ -30,7 +30,7 @@ const AddTechModal = () => {
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
-            <label htmlFor="firstName" className="active">
+            <label htmlFor="firstName" className='active'>
               First Name
             </label>
           </div>
@@ -44,14 +44,17 @@ const AddTechModal = () => {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
-            <label htmlFor="lastName" className="active">
+            <label htmlFor="lastName" className='active'>
               Last Name
             </label>
           </div>
         </div>
       </div>
       <div className="modal-footer">
-        <a href="#!" onClick={onSubmit} className="modal-close blue-grey waves-effect waves-light btn">
+        <a
+          href="#!"
+          onClick={onSubmit}
+          className="modal-close blue-grey waves-effect waves-light btn">
           Enter
         </a>
       </div>
