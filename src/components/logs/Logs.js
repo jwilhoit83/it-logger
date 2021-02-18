@@ -27,9 +27,9 @@ const Logs = () => {
   }
 
   return (
-      <ul className="collection with-header grey darken-3">
+      <ul className="collection with-header grey darken-1">
           <li className="collection-header grey darken-3">
-              <h4 className="center teal-text text-lighten-3">System Logs</h4>
+              <h4 className="teal-text text-lighten-3">System Logs</h4>
           </li>
           {!loading && logs.length === 0 ? ( <p className="center">No Logs To Show</p>) : (
               logs.map(log => <LogItem key={log.id} log={log} />)

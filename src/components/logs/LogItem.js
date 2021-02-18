@@ -3,7 +3,7 @@ import Moment from "react-moment";
 
 const LogItem = ({ log }) => {
   return (
-    <li style={{ margin: "1px" }} className="collection-item grey lighten-2">
+    <li className="collection-item grey lighten-2" style={{margin: '1px'}}>
       <div>
         <a
           href="#edit-log-modal"
