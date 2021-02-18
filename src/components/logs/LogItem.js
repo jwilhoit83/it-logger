@@ -3,11 +3,13 @@ import Moment from "react-moment";
 
 const LogItem = ({ log }) => {
   return (
-    <li className="collection-item grey lighten-2" style={{margin: '1px'}}>
+    <li className="collection-item grey lighten-2" style={{ margin: "1px" }}>
       <div>
         <a
           href="#edit-log-modal"
-          className={`modal-trigger ${log.attention ? "red-text text-darken-3" : "teal-text"}`}>
+          className={`modal-trigger ${
+            log.attention ? "red-text text-darken-3" : "blue-grey-text"
+          }`}>
           {log.message}
         </a>
         <br />
@@ -17,7 +19,10 @@ const LogItem = ({ log }) => {
           {" on "}
           <Moment format="MMMM Do YYYY, h:mm:ss a">{log.date}</Moment>
         </span>
-        <a href="#!" className="secondary-content"> <i className="material-icons grey-text">delete</i> </a>
+        <a href="#!" className="secondary-content">
+          {" "}
+          <i className="material-icons blue-grey-text">delete</i>{" "}
+        </a>
       </div>
     </li>
   );

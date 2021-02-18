@@ -13,8 +13,8 @@ const AddLogModal = () => {
       console.log(message, tech, attention);
 
       //clear fields
-      setMessage('');
-      setTech('');
+      setMessage("");
+      setTech("");
       setAttention(false);
     }
   };
@@ -43,9 +43,9 @@ const AddLogModal = () => {
             <select
               name="tech"
               value={tech}
-              className="browser-default"
+              className='browser-default'
               onChange={(e) => setTech(e.target.value)}>
-              <option value=" " disabled>
+              <option value="" disabled>
                 Select Technician
               </option>
               <option value="Jerod Wilhoit">Jerod Wilhoit</option>
@@ -73,7 +73,7 @@ const AddLogModal = () => {
         </div>
       </div>
       <div className="modal-footer">
-        <a href="#!" onClick={onSubmit} className="modal-close teal waves-effect waves-light btn">
+        <a href="#!" onClick={onSubmit} className="modal-close blue-grey waves-effect waves-light btn">
           Enter
         </a>
       </div>
