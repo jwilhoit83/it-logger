@@ -1,11 +1,11 @@
 {
   "logs": [
     {
+      "id": 1,
       "message": "Got the delete confirmation Modal working as it should",
       "attention": false,
       "tech": "Jerod Wilhoit",
-      "data": "2021-02-19T03:23:16.010Z",
-      "id": 1
+      "date": "2021-02-19T19:13:52.721Z"
     },
     {
       "message": "Added the search bar functionality",
