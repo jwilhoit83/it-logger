@@ -8,11 +8,18 @@
       "id": 1
     },
     {
-      "message": "fdasdfadfaf",
+      "message": "Added the search bar functionality",
+      "attention": false,
+      "tech": "Jerod Wilhoit",
+      "data": "2021-02-19T04:03:19.099Z",
+      "id": 2
+    },
+    {
+      "message": "Would like to change the text color on the search bar",
       "attention": true,
       "tech": "Jerod Wilhoit",
-      "data": "2021-02-19T03:30:24.413Z",
-      "id": 2
+      "data": "2021-02-19T04:03:45.015Z",
+      "id": 3
     }
   ],
   "techs": [
