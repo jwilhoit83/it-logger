@@ -1,7 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
+import { deleteLog } from "../../actions/logActions";
+import M from "materialize-css/dist/js/materialize.min.js";
 import Moment from "react-moment";
 
-const LogItem = ({ log }) => {
+const LogItem = ({ log, deleteLog }) => {
+
+  const onDelete = () => {
+    deleteLog(log.id)
+    M.toast({html: 'Log has been deleted'})
+  }
+
   return (
     <li className="collection-item grey lighten-2" style={{ margin: "1px" }}>
       <div>
@@ -19,7 +28,7 @@ const LogItem = ({ log }) => {
           {" on "}
           <Moment format="MMMM Do YYYY, h:mm:ss a">{log.date}</Moment>
         </span>
-        <a href="#!" className="secondary-content">
+        <a href="#!" className="secondary-content" onClick={onDelete}>
           {" "}
           <i className="material-icons blue-grey-text">delete</i>{" "}
         </a>
@@ -28,4 +37,4 @@ const LogItem = ({ log }) => {
   );
 };
 
-export default LogItem;
+export default connect(null, { deleteLog })(LogItem);
