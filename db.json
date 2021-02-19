@@ -1,11 +1,18 @@
 {
   "logs": [
     {
-      "message": "added the addLog functionality to the it-logger app",
+      "message": "Got the delete confirmation Modal working as it should",
       "attention": false,
       "tech": "Jerod Wilhoit",
-      "data": "2021-02-18T21:00:52.974Z",
+      "data": "2021-02-19T03:23:16.010Z",
       "id": 1
+    },
+    {
+      "message": "fdasdfadfaf",
+      "attention": true,
+      "tech": "Jerod Wilhoit",
+      "data": "2021-02-19T03:30:24.413Z",
+      "id": 2
     }
   ],
   "techs": [

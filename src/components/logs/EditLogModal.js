@@ -1,21 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { updateLog, clearCurrent } from "../../actions/logActions";
 import M from "materialize-css/dist/js/materialize.min.js";
 
-const EditLogModal = () => {
+const EditLogModal = ({ current, updateLog, clearCurrent }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState("");
+
+  useEffect(() => {
+    if (current) {
+      setMessage(current.message);
+      setAttention(current.attention);
+      setTech(current.tech);
+    }
+  }, [current]);
 
   const onSubmit = () => {
     if (message === "" || tech === "") {
       M.toast({ html: "Please enter a message and tech" });
     } else {
-      console.log(message, tech, attention);
-      
-      //clear fields
-      setMessage('');
-      setTech('');
-      setAttention(false);
+      updateLog({ id: current.id, message, attention, tech, date: new Date() });
+      M.toast({ html: `Log was updated by ${tech}` });
+
+      clearCurrent();
     }
   };
 
@@ -33,6 +41,7 @@ const EditLogModal = () => {
                 borderBottom: "1px solid #607d8b",
                 boxShadow: "0 1px 0 0 #607d8b",
               }}
+              placeholder='Log Message'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
@@ -77,7 +86,10 @@ const EditLogModal = () => {
         </div>
       </div>
       <div className="modal-footer">
-        <a href="#!" onClick={onSubmit} className="modal-close blue-grey waves-effect waves-light btn">
+        <a
+          href="#!"
+          onClick={onSubmit}
+          className="modal-close blue-grey waves-effect waves-light btn">
           Enter
         </a>
       </div>
@@ -85,4 +97,8 @@ const EditLogModal = () => {
   );
 };
 
-export default EditLogModal;
+const mapStateToProps = (state) => ({
+  current: state.log.current,
+});
+
+export default connect(mapStateToProps, { updateLog, clearCurrent })(EditLogModal);

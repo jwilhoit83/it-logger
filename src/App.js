@@ -7,6 +7,7 @@ import Logs from "./components/logs/Logs";
 import AddBtn from "./components/layout/AddBtn";
 import AddLogModal from "./components/logs/AddLogModal";
 import EditLogModal from "./components/logs/EditLogModal";
+import DeleteLogModal from "./components/logs/DeleteLogModal";
 import AddTechModal from "./components/techs/AddTechModal";
 import TechListModal from "./components/techs/TechListModal";
 import { Provider } from "react-redux";
@@ -27,6 +28,7 @@ const App = () => {
           <EditLogModal />
           <AddTechModal />
           <TechListModal />
+          <DeleteLogModal />
           <Logs />
         </div>
       </>

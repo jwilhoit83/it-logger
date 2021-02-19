@@ -1,24 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteLog } from "../../actions/logActions";
-import M from "materialize-css/dist/js/materialize.min.js";
+import { setCurrent } from "../../actions/logActions";
 import Moment from "react-moment";
 
-const LogItem = ({ log, deleteLog }) => {
-
-  const onDelete = () => {
-    deleteLog(log.id)
-    M.toast({html: 'Log has been deleted'})
-  }
-
+const LogItem = ({ log, setCurrent }) => {
   return (
     <li className="collection-item grey lighten-2" style={{ margin: "1px" }}>
       <div>
         <a
           href="#edit-log-modal"
-          className={`modal-trigger ${
-            log.attention ? "red-text text-darken-3" : "blue-grey-text"
-          }`}>
+          className={`modal-trigger ${log.attention ? "red-text text-darken-3" : "blue-grey-text"}`}
+          onClick={() => setCurrent(log)}>
           {log.message}
         </a>
         <br />
@@ -28,8 +20,10 @@ const LogItem = ({ log, deleteLog }) => {
           {" on "}
           <Moment format="MMMM Do YYYY, h:mm:ss a">{log.date}</Moment>
         </span>
-        <a href="#!" className="secondary-content" onClick={onDelete}>
-          {" "}
+        <a
+          href="#delete-log-modal"
+          className="modal-trigger secondary-content"
+          onClick={() => setCurrent(log)}>
           <i className="material-icons blue-grey-text">delete</i>{" "}
         </a>
       </div>
@@ -37,4 +31,4 @@ const LogItem = ({ log, deleteLog }) => {
   );
 };
 
-export default connect(null, { deleteLog })(LogItem);
+export default connect(null, { setCurrent })(LogItem);
