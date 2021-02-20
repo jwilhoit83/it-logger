@@ -14,9 +14,9 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
   }
 
   return (
-    <ul className="collection with-header grey darken-1">
-      <li className="collection-header grey darken-3">
-        <h3 className="blue-grey-text center">System Logs</h3>
+    <ul className="collection with-header">
+      <li className="collection-header grey">
+        <h3 className="grey-text text-darken-3 center">System Logs</h3>
       </li>
       {!loading && logs.length === 0 ? (
         <p className="center">No Logs To Show</p>

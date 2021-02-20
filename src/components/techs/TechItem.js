@@ -8,7 +8,7 @@ const TechItem = ({ tech, setCurrentTech }) => {
   return (
     <li className="collection-item">
       <div>
-        {firstName + " " + lastName}
+        <span className="blue-grey-text" style={{fontWeight: 600}}>{firstName + " " + lastName}</span>
         <a
           href="#delete-tech-modal"
           className="modal-trigger secondary-content "

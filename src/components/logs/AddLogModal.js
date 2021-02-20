@@ -75,7 +75,7 @@ const AddLogModal = ({ addLog }) => {
               <label>
                 <input
                   type="checkbox"
-                  className="filled-in"
+                  className="filled-in checkbox-blue-grey"
                   checked={attention}
                   value={attention}
                   onChange={(e) => setAttention(!attention)}
