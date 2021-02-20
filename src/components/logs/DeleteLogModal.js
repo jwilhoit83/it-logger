@@ -19,7 +19,7 @@ const DeleteLogModal = ({ deleteLog, clearCurrent, current }) => {
   };
 
   return (
-    <div id="delete-log-modal" className="modal">
+    <div id="delete-log-modal" className="modal bottom-sheet">
       <div className="modal-content">
         <h4 className="center blue-grey-text">Are you sure you want to delete this log?</h4>
       </div>

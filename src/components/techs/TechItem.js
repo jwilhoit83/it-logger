@@ -1,11 +1,18 @@
 import React from "react";
+import { setCurrentTech } from "../../actions/techActions";
+import { connect } from "react-redux";
+// import M from "materialize-css/dist/js/materialize.min.js";
 
-const TechItem = ({ tech }) => {
+const TechItem = ({ tech, setCurrentTech }) => {
+  const { firstName, lastName } = tech;
   return (
     <li className="collection-item">
       <div>
-        {tech.firstName + " " + tech.lastName}
-        <a href="#!" className="secondary-content">
+        {firstName + " " + lastName}
+        <a
+          href="#delete-tech-modal"
+          className="modal-trigger secondary-content "
+          onClick={() => setCurrentTech(tech)}>
           <i className="material-icons blue-grey-text">delete</i>
         </a>
       </div>
@@ -13,4 +20,4 @@ const TechItem = ({ tech }) => {
   );
 };
 
-export default TechItem;
+export default connect(null, { setCurrentTech })(TechItem);

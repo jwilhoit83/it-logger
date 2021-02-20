@@ -5,7 +5,7 @@
       "message": "Got the delete confirmation Modal working as it should",
       "attention": false,
       "tech": "Jerod Wilhoit",
-      "date": "2021-02-19T19:13:52.721Z"
+      "date": "2021-02-19T20:03:16.138Z"
     },
     {
       "message": "Added the search bar functionality",
@@ -20,28 +20,37 @@
       "tech": "Jerod Wilhoit",
       "data": "2021-02-19T04:03:45.015Z",
       "id": 3
+    },
+    {
+      "message": "I just added the tech list dynamically from redux",
+      "attention": false,
+      "tech": "Jerod Wilhoit",
+      "data": "2021-02-19T19:56:40.416Z",
+      "id": 4
+    },
+    {
+      "message": "Added the dynamic select list to the edit log modal",
+      "attention": false,
+      "tech": "Jerod Wilhoit",
+      "data": "2021-02-19T20:03:50.359Z",
+      "id": 5
     }
   ],
   "techs": [
     {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe"
-    },
-    {
-      "id": 2,
-      "firstName": "Sam",
-      "lastName": "Smith"
-    },
-    {
-      "id": 3,
-      "firstName": "Sara",
-      "lastName": "Wilson"
-    },
-    {
       "firstName": "Jerod",
       "lastName": "Wilhoit",
-      "id": 4
+      "id": 1
+    },
+    {
+      "firstName": "Andrew",
+      "lastName": "Prokop",
+      "id": 2
+    },
+    {
+      "firstName": "Eric",
+      "lastName": "Jankovic",
+      "id": 3
     }
   ]
 }
